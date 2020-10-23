@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jam Digital</title>
+	<script type="text/javascript">
+		window.onload = function() {jam();}
+		function jam(){
+			var a = document.getElementById('jam'),
+			d = new Date(), h, m, s;
+			h = d.getHours();
+			m = set(d.getMinutes());
+			s = set(d.getSeconds());
+
+			a.innerHTML = h + ":" + m + ":" + s;
+
+			setTimeout('jam()', 1000);
+		}
+
+		function set(a) {
+			a = a < 10 ? '0' + a : a;
+			return a;
+		}
+	</script>
+</head>
+
+<body style="font-size: 100px;
+font-family: arial;
+color: #00bcd4;
+background: url(night.jpg);
+background-size: cover;
+padding: 300px 550px" id="jam">
+
+</body>
+</html>
